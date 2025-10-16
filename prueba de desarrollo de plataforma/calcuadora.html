@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora básica</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(18, 90, 90);
+        color: #fff;
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0px;
+    }
+
+    .calculadora {
+        background-color: rgba(23, 23, 81, 0.067);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 15px;
+    }
+
+    #pantalla {
+        width: 200px;
+        height: 40px;
+        font-size: 20px;
+        text-align: right;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px;
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        font-size: 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #6b0c5e;
+        color: white;
+        transition: 0.2;
+    }
+
+    button:hover {
+        background-color: #089894;
+    }
+
+    button:active {
+        background-color: #c55b10;
+    }
+
+    .operacion {
+        background-color: #5907897e;
+    }
+
+    .operacion:hover {
+        background-color: #590789;
+    }
+
+    .borrar {
+        background-color: #d11a2a;
+    }
+
+    .borrar:hover {
+        background-color: #b93e3e;
+    }
+</style>
+
+<body>
+    <div class="calculadora">
+
+        <h1>Calculadora</h1>
+
+        <input type="text" id="pantalla" readonly>
+
+        <br><br>
+        <button onclick="agregar('7')">7</button>
+        <button onclick="agregar('8')">8</button>
+        <button onclick="agregar('9')">9</button>
+        <button onclick="agregar('+')">+</button>
+        <br>
+        <button onclick="agregar('4')">4</button>
+        <button onclick="agregar('5')">5</button>
+        <button onclick="agregar('6')">6</button>
+        <button onclick="agregar('-')">-</button>
+        <br>
+        <button onclick="agregar('1')">1</button>
+        <button onclick="agregar('2')">2</button>
+        <button onclick="agregar('3')">3</button>
+        <button onclick="agregar('*')">*</button>
+        <br>
+        <button onclick="agregar('0')">0</button>
+        <button onclick="agregar('/')">/</button>
+        <button onclick="calcular()">=</button>
+        <button onclick="borrar()">C</button>
+        <br><br>
+        <button onclick="borrarUltimo()">BU</button>
+    </div>
+
+    <script>
+
+        function agregar(valor) {
+            document.getElementById("pantalla").value += valor;
+        }
+
+        function borrar() {
+            document.getElementById("pantalla").value = "";
+        }
+
+        function borrarUltimo() {
+            let pantalla = document.getElementById("pantalla");
+            pantalla.value = pantalla.value.slice(0, -1);
+        }
+
+        function calcular() {
+            let expresion = document.getElementById("pantalla").value;
+            if (expresion === "") {
+                alert("Primero ingrese una operación");
+                return;
+            } try {
+                let resultado = eval(expresion);
+                document.getElementById("pantalla").value = resultado;
+            } catch (error) {
+                alert("Error en la expresión");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

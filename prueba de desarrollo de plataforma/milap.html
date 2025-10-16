@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Laptop simple - HTML + CSS</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg,#f0f4fb,#d7e0ee);
+      perspective: 800px;
+      font-family: Arial, sans-serif;
+    }
+
+    .laptop {
+      width: 420px;               /* ancho total de la laptop */
+      border-radius: 10px;
+      transition: transform 0.6s ease;
+      transition-origin: center bottom;
+    }
+    .laptop:hover {
+      transform: rotateX(20deg);
+    }
+
+    .screen {
+      height: 260px;
+      background: #0b3b57;        /* color del fondo de la pantalla */
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #dff6ff;
+      font-weight: bold;
+    }
+    .screen-frame {
+      background: #1a1d22;        /* color del marco de la pantalla */
+      border-radius: 10px 10px 0 0;
+      padding: 10px;
+      box-shadow: 0 60px 12px rgba(0,0,0,0.25);
+    }
+
+    .base {
+      height: 130px;
+      background: #2b2f34;
+      border-radius: 0 0 10px 10px;
+      padding: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .keys {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+
+    .key {
+      width: 42px;
+      height: 32px;
+      background: #3a3f45;
+      border-radius: 4px;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e6eef8;
+      font-size: 13px;
+      border 1px solid #2a2e31;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.5);
+    }
+    .key:hover {
+      background: #4a4f55;
+      cursor: pointer;
+    }
+
+    .trackpad {
+      width: 46%;
+      height: 28px;
+      margin: 10px auto 0;
+      background: #212427;
+      border-radius: 6px;
+    }
+
+
+    @media (max-width: 480px) {
+      .laptop { width: 94%; }
+      .key { width: 36px; height: 28px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="laptop">
+    <div class="screen-frame">
+        <div class="screen">
+      PANTALLA
+    </div>
+    <div class="base">
+      <!-- Fila 1 -->
+<div class="keys">
+  <div class="key">Esc</div>
+  <div class="key">F1</div>
+  <div class="key">F2</div>
+  <div class="key">F3</div>
+  <div class="key">F4</div>
+  <div class="key">F5</div>
+  <div class="key">F6</div>
+</div>
+
+<!-- Fila 2 -->
+<div class="keys">
+  <div class="key">Q</div>
+  <div class="key">W</div>
+  <div class="key">E</div>
+  <div class="key">R</div>
+  <div class="key">T</div>
+  <div class="key">Y</div>
+  <div class="key">U</div>
+  <div class="key">I</div>
+  <div class="key">O</div>
+  <div class="key">P</div>
+</div>
+
+<!-- Fila 3 -->
+<div class="keys">
+  <div class="key">A</div>
+  <div class="key">S</div>
+  <div class="key">D</div>
+  <div class="key">F</div>
+  <div class="key">G</div>
+  <div class="key">H</div>
+  <div class="key">J</div>
+  <div class="key">K</div>
+  <div class="key">L</div>
+</div>
+
+<!-- Fila 4 -->
+<div class="keys">
+  <div class="key">Z</div>
+  <div class="key">X</div>
+  <div class="key">C</div>
+  <div class="key">V</div>
+  <div class="key">B</div>
+  <div class="key">N</div>
+  <div class="key">M</div>
+</div>
+
+<!-- Fila 5: espacio -->
+<div class="keys">
+  <div class="key" style="width:180px;">Espacio</div>
+</div>
+
+<div class="trackpad"></div>
+
+
+      <div class="trackpad"></div>
+    </div>
+  </div>
+</body>
+</html>
