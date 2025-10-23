@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laptop Básica</title>
+
+  <style>
+    body {
+      background: #e6ebf0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estructura principal */
+    .laptop {
+      background: #222;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      padding: 15px;
+    }
+
+    /* Pantalla */
+    .pantalla {
+      background: #0a3d62;
+      width: 700px;
+      height: 300px;
+      border: 8px solid #111;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    /* Teclado */
+    .teclado {
+      background: #333;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: inset 0 -4px 0 #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Cada fila de teclas */
+    .fila {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin-bottom: 5px;
+    }
+
+    /* Teclas normales */
+    button {
+      background: #444;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      margin: 4px;
+      border-radius: 6px;
+      box-shadow: inset 0 -3px 0 #222;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    /* Efecto al pasar el mouse */
+    button:hover {
+      background: #555;
+    }
+
+    /* Efecto al presionar */
+    button:active {
+      background: #666;
+      transform: translateY(2px);
+      box-shadow: inset 0 0 0 #000;
+    }
+
+    /* Barra espaciadora más larga */
+    .barra {
+      width: 200px;
+      background: #444;
+      box-shadow: inset 0 -3px 0 #222;
+      border-radius: 6px;
+      padding: 10px 0;
+      margin: 3px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    /* Ajuste para pantallas pequeñas */
+    @media (max-width: 800px) {
+      .pantalla {
+        width: 90%;
+        height: 200px;
+      }
+
+      button {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="laptop">
+    <div class="pantalla">
+      <h2>💻 PANTALLA ENCENDIDA</h2>
+    </div>
+
+    <div class="teclado">
+      <!-- Fila de funciones -->
+      <div class="fila">
+        <button>Esc</button>
+        <button>F1</button>
+        <button>F2</button>
+        <button>F3</button>
+        <button>F4</button>
+        <button>F5</button>
+        <button>F6</button>
+        <button>F7</button>
+        <button>F8</button>
+        <button>F9</button>
+        <button>F10</button>
+        <button>F11</button>
+        <button>F12</button>
+      </div>
+
+      <!-- Fila QWERTY -->
+      <div class="fila">
+        <button>Q</button>
+        <button>W</button>
+        <button>E</button>
+        <button>R</button>
+        <button>T</button>
+        <button>Y</button>
+        <button>U</button>
+        <button>I</button>
+        <button>O</button>
+        <button>P</button>
+      </div>
+
+      <!-- Fila ASDF -->
+      <div class="fila">
+        <button>A</button>
+        <button>S</button>
+        <button>D</button>
+        <button>F</button>
+        <button>G</button>
+        <button>H</button>
+        <button>J</button>
+        <button>K</button>
+        <button>L</button>
+        <button>Enter</button>
+      </div>
+
+      <!-- Fila ZXCV -->
+      <div class="fila">
+        <button>Shift</button>
+        <button>Z</button>
+        <button>X</button>
+        <button>C</button>
+        <button>V</button>
+        <button>B</button>
+        <button>N</button>
+        <button>M</button>
+        <button>Shift</button>
+      </div>
+
+      <!-- Barra espaciadora -->
+      <div class="fila">
+        <button>Ctrl</button>
+        <button>Alt</button>
+        <button class="barra">Espacio</button>
+        <button>Alt</button>
+        <button>Ctrl</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
